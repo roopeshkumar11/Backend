@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This apge belog to @ :<%=data.name %></h1>
+    <button>Follow </button>
+    <button>Message</button>
+    <h1>Followers<%= data.followers %></h1>
+    <h1>Followers<%= data.following %></h1>
+
+    <% for (let post of data.posts) {%>
+        <img src= <%=post.image%> alt="some img"> 
+
+        <p>
+            LIkes <%= post.comments %>  comments :<%= post.likes %>
+        </p>
+        <%  } %>
+</body>
+<script src="/script.js"></script>
+</html>
