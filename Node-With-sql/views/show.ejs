@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show data</title>
+</head>
+<body>
+    <h1>User data</h1> <form action="/"><button>See total number of data</button></form>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Username</th>
+        </tr>
+        <% for (let user of users) { %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.username %></td>
+            <td><%= user.password %></td>
+            <td>
+                <form method="get" action="/user/<%=user.id%>/edit" ><button>Edit</button></form></td>
+                <td>
+                    <form method="post" action="/user/<%=user.id%>/delete" ><button>Delete</button></form></td>
+        </tr>
+
+        
+        <% } %>
+        <a href="http://localhost:8080/user/add"> Add data</a>
+       
+    </table>
+</body>
+</html>
